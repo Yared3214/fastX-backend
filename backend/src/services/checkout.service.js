@@ -37,8 +37,8 @@ const checkout = async (order, user) => {
             first_name: first,
             last_name: last,
             tx_ref: tx_ref,
-            callback_url: `https://fastx-backend-3.onrender.com/api/checkout/verify/${user.id}`, // Ensure this URL is reachable from Chapa
-            return_url: `https://fastx-delivery-app-demo.vercel.app/order/confirmation/${order._id}`,
+            callback_url: `https://fastx-backend.onrender.com/api/checkout/verify/${user.id}`, // Ensure this URL is reachable from Chapa
+            return_url: `https://fastx-delivery-app.vercel.app/order/confirmation/${order._id}`,
         };
 
         // Send the request to Chapa
