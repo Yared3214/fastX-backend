@@ -8,7 +8,7 @@ const restaurantService = require('../services/restaurant.service.js')
 
 const createOrder = async (req, res) => {
     console.log('order data', req.body);
-    const { delivery_instructions } = req.body;
+    const { delivery_instructions, address } = req.body;
 
     try {
         const user = req.user;
@@ -73,6 +73,7 @@ const createOrder = async (req, res) => {
                 total_price: cart.totalPrice,
                 delivery_fee: deliveryFee || 0,
                 total_amount: cart.totalPrice + (deliveryFee || 0),
+                address,
             };
 
             // Create the new order

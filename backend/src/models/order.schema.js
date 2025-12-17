@@ -67,6 +67,10 @@ const orderSchema = new Schema({
         type: String,
         default: null
     },
+    address: {
+        location: { type: String, required: true },
+        specific_address: { type: String, required: true }
+    }
 }, { timestamps: true });
 
 const Order = model('Order', orderSchema);
